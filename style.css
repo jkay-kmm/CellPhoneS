@@ -1404,7 +1404,7 @@
     border-radius: 50%;
     overflow: hidden;
     position: fixed;
-    right: 354px;
+    right: 351px;
     bottom: 60px;
     animation: pulse-blue ease 2s infinite;
     z-index: 31;
@@ -1438,7 +1438,7 @@
     height: 45px;
     border-radius: 50%;
     position: fixed;
-    right: 354px;
+    right: 351px;
     bottom: 120px;
     background-color: #D70018;
     border: none;
