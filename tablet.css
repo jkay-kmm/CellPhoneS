@@ -155,6 +155,55 @@
         margin-right: 10px;
         position: relative;
     }
+    .tablet__header__location__menu__list{
+        display: none;
+        background-color: white;
+        border-radius: 15px;
+        box-shadow: 0 0 5px rgba(0,0,0,0.4);
+        position: fixed;
+        top: 49px;
+        right: 164px;
+        width: 160px;
+        z-index: 9000002;
+    }
+    .tablet__header__location__menu__list__modal{
+        display: none;
+        background-color: rgba(0,0,0,0.2);
+        box-shadow: 0 0 5px rgba(0,0,0,0.4);
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        z-index: 9000001;
+    }
+    .tablet__header__location__menu__item{
+        padding: 3px 20px;
+        min-height: 26px;
+    }
+    .tablet__header__location__menu__item:nth-child(1){
+        background-color: #FEE2E2;
+        border-radius: 15px 15px 0 0;
+    }
+    .tablet__header__location__menu__item:last-child{
+        border-radius: 0 0 15px 15px;
+    }
+    .tablet__header__location__menu__item:hover{
+        background-color: #FEE2E2;
+    }
+    .tablet__header__location__menu__item__link{
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        color: #333333;
+    }
+    .tablet__header__location__menu__item__link i{
+        margin-right: 10px;
+        font-size: 12px;
+    }
+
+
+
     .tablet__header__location i{
         font-size: 1rem;
     }
@@ -380,29 +429,24 @@
     }
     .featured__phone__product__list{
         overflow-x: auto;
-    }
-    .featured__phone__product__item{
+    }.featured__phone__product__item{
         width: 140px;
         height: 309px;
         transition: all ease 0.5s;
         margin: 0 5px 10px 5px;
         position: relative;
-    } 
-    .featured__phone__product__item:hover{
-        transform: scale(1.01);
-        box-shadow: 0 0 20px rgba(0,0,0,0.3);
-    }
-    .flash__sale__product__promotion__info p{
-        font-size: 0.8rem;
-        color: #444;
-    }
-    .featured__phone__product__item{
-        width: 140px;
-        height: 309px;
         padding: 5px;
         box-shadow: rgb(60 64 67 / 10%) 0px 1px 2px 0px, 
         rgb(60 64 67 / 15%) 0px 2px 6px 2px;
         border-radius: 8px;
+    } 
+    .featured__phone__product__item:hover{
+        transform: scale(1.03);
+        box-shadow: 0 0 5px rgba(0,0,0,0.4);
+    }
+    .flash__sale__product__promotion__info p{
+        font-size: 0.8rem;
+        color: #444;
     }
     .featured__phone__product__img__wrapper{
         margin: 20px 0 15px 0;
