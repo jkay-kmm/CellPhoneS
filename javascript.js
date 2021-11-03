@@ -35,56 +35,88 @@ setInterval(function(){
     switch(randomNumber){
         case 0:
             index = 0
+            DotHandler(index)
             break
         case 1:
             index = 1      
             positionX = -l
             SlideWrapper.style = `transform: translateX(${positionX}px);`
+            DotHandler(index)
             break  
         case 2:
             index = 2      
             positionX = -l*2
             SlideWrapper.style = `transform: translateX(${positionX}px);` 
+            DotHandler(index)
             break  
         case 3:
             index = 3      
             positionX = -l*3
             SlideWrapper.style = `transform: translateX(${positionX}px);` 
+            DotHandler(index)
             break   
         case 4: 
             index = 4      
             positionX = -l*4
             SlideWrapper.style = `transform: translateX(${positionX}px);` 
+            DotHandler(index)
             break 
         case 5:
             index = 5      
             positionX = -l*4
             SlideWrapper.style = `transform: translateX(${positionX}px);` 
+            DotHandler(index)
             break                                       
     }
     },5000)
 // Button Slider
+var DotBtns = document.querySelectorAll('.slider__bottom__item__underline')
+var Dotitems = document.querySelectorAll('.slider__bottom__item')
 NextBtn.addEventListener('click' ,function(){
     Handle(1)
 })
 PrevtBtn.addEventListener('click' ,function(){
     Handle(-1)
 })
+DotSliderHandler()
 function Handle ($number){
-    if( $number == 1) {
-        if( index >= 5)return
+    if( $number == 1) {   
+        if( index >= 4)return
         positionX = positionX - l
-        SlideWrapper.style = `transform: translateX(${positionX}px);`  
-        ++index
-        console.log('index', index)
+        SlideWrapper.style = `transform: translateX(${positionX}px);`
+        ++index     
+        DotHandler(index)
     }
-    else if( $number == -1) {
+    else if( $number == -1) { 
         if(index <= 0)return
         positionX = positionX + l
         SlideWrapper.style = `transform: translateX(${positionX}px);`
-        --index
+        index--       
+        DotHandler(index)
     }
-}   
+    
+    console.log('index', index)
+}
+// Dot Slider   
+function DotSliderHandler(){
+    Dotitems.forEach(function(item,itemIndex){
+        item.addEventListener('click',function(){      
+            positionX = -l*itemIndex
+            SlideWrapper.style = `transform: translateX(${positionX}px);` 
+            DotHandler(itemIndex)
+            index = itemIndex
+        })
+    })
+}
+// Xử lí hiệu ứng dot khi chuyển slide
+function DotHandler(index){
+    document.querySelector('.slider__bottom__item__underline.dot--active').classList.remove('dot--active')
+    DotBtns[index].classList.add('dot--active')
+    document.querySelector('.slider__bottom__item.item--active').classList.remove('item--active')
+    Dotitems[index].classList.add('item--active')
+}
+
+
 // // Flash Sale Slider
 var FNextBtn = document.querySelector('.flash__sale__next__btn')
 var FPrevBtn = document.querySelector('.flash__sale__prev__btn')
@@ -265,3 +297,26 @@ tablet__modal.addEventListener('click',function(){
     tablet__header__location.style = `display: flex`
     tablet__modal.style = `display: none`
 })
+
+// Tbalet-smartphone Location Dropdown
+var TabLocationDropdown = document.querySelector('.tablet__header__location__menu__list')
+    TabLocationBtn = document.querySelector('.tablet__header__location')
+    TabLocationModal = document.querySelector('.tablet__header__location__menu__list__modal')
+    
+    SmartLocationBtn = document.querySelector('.smartphone__header__location')
+    
+    
+    TabLocationBtn.onclick = function(){
+        TabLocationDropdown.style = `display: block;`
+        TabLocationModal.style = `display: block;`
+    }
+    
+    TabLocationModal.onclick = function(){
+        TabLocationDropdown.style = `display: none;`
+        TabLocationModal.style = `display: none;`
+    }
+
+    SmartLocationBtn.onclick = function(){
+        TabLocationDropdown.style = `display: block;`
+        TabLocationModal.style = `display: block;`
+    }
