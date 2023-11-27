@@ -1,0 +1,5 @@
+Em clone lại trang web CellPhone cùng 1 bạn khác trường 
+Chia đều việc song song cho nhau 
+Em làm html , chuẩn bị hình ảnh 
+Bạn em làm phần css 
+JS hai người cùng nhau góp ý tưởng với code ạ 
